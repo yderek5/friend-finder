@@ -4,13 +4,16 @@ var path = require('path');
 var router = express.Router();
 var fs = require('fs');
 
+var newuser;
+
 // Get friends
 router.get('/api/friends', function(req, res) {
   res.sendFile(path.join(__dirname, '../data', 'friends.js'));
 });
 
 router.post('/api/friends', function(req, res) {
-  res.send(req.body);
+  newuser = req.body;
+  console.log(newuser);
 });
 
 module.exports = router;
