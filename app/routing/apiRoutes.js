@@ -1,19 +1,18 @@
 var express = require('express');
-var bodyParser = require('body-parser');
 var path = require('path');
+var users = require("../data/friends.js");
 var router = express.Router();
-var fs = require('fs');
 
 var newuser;
 
 // Get friends
 router.get('/api/friends', function(req, res) {
-  res.sendFile(path.join(__dirname, '../data', 'friends.js'));
+  res.send(users);
 });
 
 router.post('/api/friends', function(req, res) {
-  newuser = req.body;
-  console.log(newuser);
+  console.log(req.body);
+  friends.push(request.body);
 });
 
 module.exports = router;
