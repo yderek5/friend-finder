@@ -9,7 +9,7 @@ router.get('/api/friends', function(req, res) {
 });
 
 router.post("/api/friends", function(req, res) {
-  res.send(req.body);
+  res.send(path.join(__dirname, '../data', 'friends.js'));
 });
 
 module.exports = router;
