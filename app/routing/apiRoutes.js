@@ -9,7 +9,6 @@ router.get('/api/friends', function(req, res) {
 });
 
 router.post('/api/friends', function(req, res) {
-  console.log(req.body);
   users.push(req.body);
 });
 
