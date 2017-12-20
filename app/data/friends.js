@@ -16,8 +16,8 @@ var users = [
         ]
     },
     {
-        name: 'John',
-        photo: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwi59v_O25nYAhVo34MKHVV4B1kQjRwIBw&url=https%3A%2F%2Fwww.gv.com%2Fteam%2Fjohn-zeratsky%2F&psig=AOvVaw3mkQ4Dljtael397momnKuq&ust=1513897983391933",
+        name: 'Karen',
+        photo: "https://static0.srcdn.com/wp-content/uploads/2017/11/Deborah-Ann-Woll-as-Karen-Page.jpg?q=50&w=1000&h=500&fit=crop&dpr=1.5",
         score: [
             "2",
             "3",
