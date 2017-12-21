@@ -3,31 +3,34 @@ var path = require('path');
 var users = require("../data/friends.js");
 var router = express.Router();
 
-// Get friends
+// Get users array
 router.get('/api/friends', function(req, res) {
   res.send(users);
 });
 
 router.post('/api/friends', function(req, res) {
 
-  // This takes the array, converts all values to integers and then adds them all up to get the total sum
+  // This takes your answer vals and gets the sum given as yourScore
   var yourScore = req.body.score.map(function(x){return parseInt(x,10)}).reduce(add);
   function add(a, b) {
     return a + b;
   }
+  // push created user to users array
 users.push(req.body);
-  /*go through all users in the users array and log their total score 
-  excluding the last one (that is the user you just created)*/
+  // create a difference array to store difference from you and all other users
   var differenceArr = [];
-  // push them to difference array..lowest num is your match
+  /* this goes through the users array, calculates total score and then gets 
+  the abs difference of yourScore - userScores excluding the last object 
+  because that's the one you just entered, otherwise you'd match with 
+  yourself everytime */
   for(var i=0;i<users.length-1;i++) {
     var usersScores = users[i].score.map(function(x){return parseInt(x,10)}).reduce(add);
     var difference = Math.abs(yourScore - usersScores);
     differenceArr.push(difference);
   }
-  // find the index of the smallest number in the differenceArr
   var indexOfSmallest = 0;
   var value = differenceArr[0];
+  // this goes through the differenceArr and finds the index of the smallest number
   for(var k=0;k<differenceArr.length;k++) {
     if(differenceArr[k] < value) {
       value = differenceArr[k];
